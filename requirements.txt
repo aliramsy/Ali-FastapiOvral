@@ -89,7 +89,7 @@ requests-ftp==0.3.1
 #rpm==4.17.0
 rsa==4.8
 #selinux==3.3
-sepolicy==3.3
+#sepolicy==3.3
 setools==4.4.0
 simpleaudio==1.0.4
 simpleline==1.8.2
