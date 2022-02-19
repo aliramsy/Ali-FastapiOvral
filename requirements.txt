@@ -77,7 +77,7 @@ pytest==6.2.5
 python-dateutil==2.8.1
 python-dotenv==0.19.2
 python-jose==3.3.0
-python-meh==0.50
+#python-meh==0.50
 python-multipart==0.0.5
 pytz==2021.3
 pyudev==0.22.0
