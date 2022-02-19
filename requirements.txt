@@ -67,7 +67,7 @@ pycups==2.0.1
 pycurl==7.44.1
 pydantic==1.8.2
 pyenchant==3.2.2
-PyGObject==3.42.0
+#PyGObject==3.42.0
 pykickstart==3.34
 pyOpenSSL==21.0.0
 pyparsing==3.0.7
