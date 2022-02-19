@@ -70,7 +70,7 @@ PyGObject==3.42.0
 pykickstart==3.34
 pyOpenSSL==21.0.0
 pyparsing==3.0.7
-pyparted==3.11.7
+#pyparted==3.11.7
 PySocks==1.7.1
 pytest==6.2.5
 python-augeas==1.1.0
