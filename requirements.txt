@@ -86,7 +86,7 @@ regex==2022.1.18
 requests==2.27.0
 requests-file==1.5.1
 requests-ftp==0.3.1
-rpm==4.17.0
+#rpm==4.17.0
 rsa==4.8
 selinux==3.3
 sepolicy==3.3
