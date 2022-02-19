@@ -96,7 +96,7 @@ simpleline==1.8.2
 six==1.16.0
 sniffio==1.2.0
 sockets==1.0.0
-sos==4.2
+#sos==4.2
 soupsieve==2.3.1
 SQLAlchemy==1.4.27
 sqlparse==0.4.2
