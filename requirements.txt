@@ -73,7 +73,7 @@ pyparsing==3.0.7
 #pyparted==3.11.7
 PySocks==1.7.1
 pytest==6.2.5
-python-augeas==1.1.0
+#python-augeas==1.1.0
 python-dateutil==2.8.1
 python-dotenv==0.19.2
 python-jose==3.3.0
