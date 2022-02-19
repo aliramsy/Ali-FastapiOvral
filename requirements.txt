@@ -12,7 +12,7 @@ blivet==3.4.2
 cffi==1.15.0
 chardet==4.0.0
 charset-normalizer==2.0.4
-chrome-gnome-shell==0.0.0
+#chrome-gnome-shell==0.0.0
 click==8.0.3
 cryptography==36.0.1
 cupshelpers==1.0
