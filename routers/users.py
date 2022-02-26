@@ -12,11 +12,16 @@ router=APIRouter(
 models.Base.metadata.create_all(bind=engine)
 
 
-@router.post("/",status_code=status.HTTP_201_CREATED)
+@router.post("/",status_code=status.HTTP_201_CREATED, response_model=schemas.Ruser)
 async def create_user(request:schemas.User,db:Session=Depends(get_db)):
+    useremailfound=db.query(models.User).filter(models.User.email==request.email).first()
+    usernamefound=db.query(models.User).filter(models.User.username==request.username).first()
+    if usernamefound:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT,detail="the username already taken")
+    if useremailfound:
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT,detail="you have an account with this email")
     hashed_password=get_password_hash(request.password)
     new_user=models.User(username=request.username,email=request.email,password=hashed_password)
-
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
