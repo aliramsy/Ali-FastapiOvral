@@ -44,7 +44,7 @@ async def get_post(id,db:Session=Depends(get_db),current_user:int=Depends(oath.g
 async def delete(id,db:Session=Depends(get_db),current_user:int = Depends(oath.get_current_user)):
     dpost=db.query(models.Post).filter(models.Post.id==id)
     dpost1=dpost.first()
-    if not dpost:
+    if not dpost1:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="there is no user like this")
     if current_user.id != dpost1.owner_id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,detail="you are not allowed to delete this post")
@@ -56,7 +56,7 @@ async def delete(id,db:Session=Depends(get_db),current_user:int = Depends(oath.g
 async def update(id,request:schemas.Post,db:Session=Depends(get_db),current_user:int = Depends(oath.get_current_user)):
     update_post=db.query(models.Post).filter(models.Post.id==id)
     update_post1=update_post.first()
-    if not update_post.first():
+    if not update_post1:
          raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="the post you are looking for is not found")
     if current_user.id != update_post1.owner_id:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN,detail="you are not allowed to update this post")

@@ -15,6 +15,7 @@ class Ruser(BaseModel):
     username:str
     email:EmailStr
     created_at:datetime
+    id:int
     
     class Config:
         orm_mode = True

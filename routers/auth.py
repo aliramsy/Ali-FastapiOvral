@@ -12,7 +12,7 @@ models.Base.metadata.create_all(bind=engine)
 
 router = APIRouter()
 
-@router.post("/login",response_model=schemas.Token)
+@router.post("/login",response_model=schemas.Token, status_code=status.HTTP_202_ACCEPTED)
 def login(request:OAuth2PasswordRequestForm=Depends(),db:Session=Depends(get_db)):
     #oath2 has only username and password object.username performs as username and email
     userlogin=db.query(models.User).filter(models.User.email==request.username).first()

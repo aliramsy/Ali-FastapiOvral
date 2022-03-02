@@ -1,9 +1,8 @@
 
 from fastapi import FastAPI,status
-import models
-from database import engine
+#import models
+#from database import engine
 from routers import posts, users,auth,like
-from config import settings
 from fastapi.middleware.cors import CORSMiddleware
 
 

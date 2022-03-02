@@ -23,13 +23,13 @@ async def like(request:schemas.Like,db:Session=Depends(database.get_db),current_
         db.add(new_like)
         db.commit()
         return "{message}:{like successfully added}"
-    else:
+    elif request.dir==0:
         if not likefound:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="there is no like found")
-        else:
-            likequery.delete(synchronize_session=False)
-            db.commit()
-            return "{message}:{the like successfully removed}"
+        
+        likequery.delete(synchronize_session=False)
+        db.commit()
+        return "{message}:{like successfully removed}"
         
 
 
