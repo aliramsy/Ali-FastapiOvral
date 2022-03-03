@@ -29,7 +29,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-           
+
     runs-on: ubuntu-latest
     steps:
       - name: pulling git repo 
@@ -43,4 +43,4 @@ jobs:
       - name: installing requirements
         run: pip install -r requirements.txt
       - name: test with pytest
-        run: python -m pytest -v
+        run: pytest -v
