@@ -62,6 +62,6 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/FastapiOveral:latest
-          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/FastapiOveral:buildcache
-          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/FastapiOveral:buildcache,mode=max
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache,mode=max
