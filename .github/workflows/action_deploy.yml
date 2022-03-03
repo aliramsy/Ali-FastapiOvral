@@ -3,7 +3,7 @@ name: First Code Deployment
 on: [push, pull_request]
 
 jobs:
-  job1: 
+  build: 
     environment:
       name: testing
     env:
@@ -65,3 +65,20 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
           cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache
           cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:buildcache,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build]
+    environment:
+      name: production
+    
+
+    steps:
+      - name: pulling git repo 
+        uses: actions/checkout@v2
+      - name: deploying to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL}
