@@ -29,7 +29,7 @@ app.include_router(like.router)
 
 @app.get("/home", status_code=status.HTTP_200_OK)
 def home():
-    return "Donya,if I could keep looking at your eyes for rest of my life,I would be the happiest person in the world!!!"
+    return "Hello World!"
 
 @app.get("/home/{id}",status_code=status.HTTP_200_OK)
 async def get_info(id,skip:int=0,limit:int=10,published:bool=True):
